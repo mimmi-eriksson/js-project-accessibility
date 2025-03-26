@@ -1,0 +1,27 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+/* LEXEND font class for a variable style
+
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.lexend-<uniquifier> {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+  */
