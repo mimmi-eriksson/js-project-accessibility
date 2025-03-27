@@ -1,7 +1,8 @@
 
 // DOM selectors
+startQuizButton = document.getElementById('start-button')
 questions = document.querySelectorAll('.question')
-startQuizButton = document.getElementById('intro-continue')
+submitButtons = document.querySelectorAll('.submit-button')
 
 // initialize current question counter
 let currentQuestionIndex = 0
@@ -22,14 +23,25 @@ const setActiveQuestion = (index) => {
 const startQuiz = () => {
   // show first question
   setActiveQuestion(currentQuestionIndex)
+  // hide start button
+  startQuizButton.style.display = 'none'
   // set  focus to the first question
-  // ---------CONTINUE NEXT WEEK
-}
 
+  // -------------
+
+}
 
 // start quiz when start button is selected
 startQuizButton.addEventListener('click', startQuiz)
 
+// go to next question when submit button is selected
+submitButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const nextQuestionIndex = (currentQuestionIndex + 1) % questions.length
+    setActiveQuestion(nextQuestionIndex)
+    currentQuestionIndex = nextQuestionIndex
+  })
+})
 
 
 
@@ -65,7 +77,7 @@ startQuizButton.addEventListener('click', startQuiz)
 //   submitButton.addEventListener('keydown', (event) => {
 //     if (event.key === 'Enter') {
 //       const nextQuestionIndex = (currentQuestionIndex + 1) % questions.length
-//       console.log(nextQuestionIndex)
+//       currentQuestionIndex =
 //       setActiveQuestion(nextQuestionIndex)
 //     }
 

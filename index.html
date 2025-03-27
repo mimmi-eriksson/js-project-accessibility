@@ -60,14 +60,14 @@
         src=""
         alt=""
       > <!-- Remember to add a decorative image --> <!-- role=presentation(?) -->
-      <button
-        id="intro-continue"
-        type="button"
-      >Start Quiz</button>
     </section>
 
     <section>
       <h2>Accessibility Quiz</h2>
+      <button
+        id="start-button"
+        type="button"
+      >Start Quiz</button>
       <fieldset class="question">
         <legend>Question 1</legend>
         <p>What does the WCAG stand for?</p>
@@ -119,7 +119,6 @@
             value="a"
           >
           <label for="q2a"><span>A)</span> Level A</label>
-          <!--USER SHOULD BE ABLE TO PRESS A ON KEYBOARD-->
         </span>
         <span>
           <input
@@ -129,7 +128,6 @@
             value="b"
           >
           <label for="q2b"><span>B)</span> Level AA</label>
-          <!--USER SHOULD BE ABLE TO PRESS B ON KEYBOARD-->
         </span>
         <span>
           <input
@@ -139,7 +137,81 @@
             value="c"
           >
           <label for="q2c"><span>C)</span> Level AAA</label>
-          <!--USER SHOULD BE ABLE TO PRESS C ON KEYBOARD-->
+        </span>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>Question 3</legend>
+        <p>What is the purpose of ARIA landmark roles?</p>
+        <span>
+          <input
+            type="radio"
+            name="question3"
+            id="q3a"
+            value="a"
+          >
+          <label for="q3a"><span>A)</span> A way to style web-pages using CSS classes</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question3"
+            id="q3b"
+            value="b"
+          >
+          <label for="q3b"><span>B)</span> A way to classify and label sections of a page for assistive
+            technology</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question3"
+            id="q3c"
+            value="c"
+          >
+          <label for="q3c"><span>C)</span> A way to improve the SEO ranking of the web-site</label>
+        </span>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>Question 4</legend>
+        <p>What is a "keyboard trap" in web accessibility?</p>
+        <span>
+          <input
+            type="radio"
+            name="question4"
+            id="q4a"
+            value="a"
+          >
+          <label for="q4a"><span>A)</span> A situation where a user cannot navigate away from an element using only the
+            keyboard</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question4"
+            id="q4b"
+            value="b"
+          >
+          <label for="q4b"><span>B)</span> A situation where screen readers fail to read content properly for
+            users</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question4"
+            id="q4c"
+            value="c"
+          >
+          <label for="q4c"><span>C)</span> A situation where a user is unable to use their mouse on a webpage</label>
         </span>
         <button
           class="submit-button"
