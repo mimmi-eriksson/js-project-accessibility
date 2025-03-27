@@ -60,11 +60,15 @@
         src=""
         alt=""
       > <!-- Remember to add a decorative image --> <!-- role=presentation(?) -->
+      <button
+        id="intro-continue"
+        type="button"
+      >Start Quiz</button>
     </section>
 
     <section>
       <h2>Accessibility Quiz</h2>
-      <fieldset>
+      <fieldset class="question">
         <legend>Question 1</legend>
         <p>What does the WCAG stand for?</p>
         <span>
@@ -72,7 +76,7 @@
             type="radio"
             name="question1"
             id="q1a"
-            value="q1a"
+            value="a"
           >
           <label for="q1a"><span>A)</span> <!--CLEAR iNTRODUCTIVE OPTION A--> World Content Accessibility Guidelines
           </label>
@@ -83,7 +87,7 @@
             type="radio"
             name="question1"
             id="q1b"
-            value="q1b"
+            value="b"
           >
           <label for="q1b"><span>B)</span> World Wide Web Consortium</label>
           <!--USER SHOULD BE ABLE TO PRESS B ON KEYBOARD-->
@@ -93,12 +97,54 @@
             type="radio"
             name="question1"
             id="q1c"
-            value="q1c"
+            value="c"
           >
           <label for="q1c"><span>C)</span> Web Content Accessibility Guidelines</label>
           <!--USER SHOULD BE ABLE TO PRESS C ON KEYBOARD-->
         </span>
-        <button type="submit">Submit</button>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>Question 2</legend>
+        <p>What is the most common target of WCAG level of conformance for many websites?</p>
+        <span>
+          <input
+            type="radio"
+            name="question2"
+            id="q2a"
+            value="a"
+          >
+          <label for="q2a"><span>A)</span> Level A</label>
+          <!--USER SHOULD BE ABLE TO PRESS A ON KEYBOARD-->
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question2"
+            id="q2b"
+            value="b"
+          >
+          <label for="q2b"><span>B)</span> Level AA</label>
+          <!--USER SHOULD BE ABLE TO PRESS B ON KEYBOARD-->
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question2"
+            id="q2c"
+            value="c"
+          >
+          <label for="q2c"><span>C)</span> Level AAA</label>
+          <!--USER SHOULD BE ABLE TO PRESS C ON KEYBOARD-->
+        </span>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
       </fieldset>
 
     </section>
