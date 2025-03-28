@@ -67,7 +67,11 @@
 
     <section>
       <h2>Accessibility Quiz</h2>
-      <fieldset>
+      <button
+        id="start-button"
+        type="button"
+      >Start Quiz</button>
+      <fieldset class="question">
         <legend>Question 1</legend>
         <p>What does the WCAG stand for?</p>
         <span>
@@ -75,7 +79,7 @@
             type="radio"
             name="question1"
             id="q1a"
-            value="q1a"
+            value="a"
           >
           <label for="q1a"><span>A)</span> <!--CLEAR iNTRODUCTIVE OPTION A--> World Content Accessibility Guidelines
           </label>
@@ -86,7 +90,7 @@
             type="radio"
             name="question1"
             id="q1b"
-            value="q1b"
+            value="b"
           >
           <label for="q1b"><span>B)</span> World Wide Web Consortium</label>
           <!--USER SHOULD BE ABLE TO PRESS B ON KEYBOARD-->
@@ -96,12 +100,126 @@
             type="radio"
             name="question1"
             id="q1c"
-            value="q1c"
+            value="c"
           >
           <label for="q1c"><span>C)</span> Web Content Accessibility Guidelines</label>
           <!--USER SHOULD BE ABLE TO PRESS C ON KEYBOARD-->
         </span>
-        <button type="submit">Submit</button>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>Question 2</legend>
+        <p>What is the most common target of WCAG level of conformance for many websites?</p>
+        <span>
+          <input
+            type="radio"
+            name="question2"
+            id="q2a"
+            value="a"
+          >
+          <label for="q2a"><span>A)</span> Level A</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question2"
+            id="q2b"
+            value="b"
+          >
+          <label for="q2b"><span>B)</span> Level AA</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question2"
+            id="q2c"
+            value="c"
+          >
+          <label for="q2c"><span>C)</span> Level AAA</label>
+        </span>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>Question 3</legend>
+        <p>What is the purpose of ARIA landmark roles?</p>
+        <span>
+          <input
+            type="radio"
+            name="question3"
+            id="q3a"
+            value="a"
+          >
+          <label for="q3a"><span>A)</span> A way to style web-pages using CSS classes</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question3"
+            id="q3b"
+            value="b"
+          >
+          <label for="q3b"><span>B)</span> A way to classify and label sections of a page for assistive
+            technology</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question3"
+            id="q3c"
+            value="c"
+          >
+          <label for="q3c"><span>C)</span> A way to improve the SEO ranking of the web-site</label>
+        </span>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>Question 4</legend>
+        <p>What is a "keyboard trap" in web accessibility?</p>
+        <span>
+          <input
+            type="radio"
+            name="question4"
+            id="q4a"
+            value="a"
+          >
+          <label for="q4a"><span>A)</span> A situation where a user cannot navigate away from an element using only the
+            keyboard</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question4"
+            id="q4b"
+            value="b"
+          >
+          <label for="q4b"><span>B)</span> A situation where screen readers fail to read content properly for
+            users</label>
+        </span>
+        <span>
+          <input
+            type="radio"
+            name="question4"
+            id="q4c"
+            value="c"
+          >
+          <label for="q4c"><span>C)</span> A situation where a user is unable to use their mouse on a webpage</label>
+        </span>
+        <button
+          class="submit-button"
+          type="submit"
+        >Submit</button>
       </fieldset>
 
     </section>
