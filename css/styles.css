@@ -8,11 +8,12 @@ html {
 
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 400;
 }
 
-.skip-link{
+.skip-link {
   text-decoration: none;
   color: black;
 }
@@ -20,9 +21,11 @@ h1, h2 {
 header {
   background: #E7F1F1;
 }
+
 ul {
   display: flex;
 }
+
 li a {
   text-decoration: none;
   color: black;
@@ -33,6 +36,7 @@ li a {
 footer {
   background: #E7F1F1;
   position: absolute;
+  border: 2px solid black;
 }
 
 /* LEXEND font class for a variable style
