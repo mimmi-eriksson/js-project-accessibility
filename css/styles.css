@@ -66,6 +66,26 @@ li a {
   font-size: 16px;
   line-height: 1.6;
 }
+#about {
+  background-color: #A5C97B;
+  padding: 72px 27px 68px 27px;
+  text-align: center;
+  color: #262626;
+}
+
+#about h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 
 #quiz {
   display: flex;
