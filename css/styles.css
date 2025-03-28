@@ -54,3 +54,11 @@ fieldset {
 input[type="radio"] {
   display: none;
 }
+
+label.btn {
+  display: inline-block;
+  background-color: #BFF6D4;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: #6FB686 solid 1px;
+}
