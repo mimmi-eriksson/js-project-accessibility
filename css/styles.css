@@ -12,6 +12,9 @@ html {
 body {
   background-color: #F4F7F7;
   color: 235558;
+}
+
+main {
   padding: 10px;
 }
 
@@ -61,6 +64,14 @@ li a {
   margin: 0 auto;
   font-size: 16px;
   line-height: 1.6;
+}
+
+#quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 28px;
 }
 
 legend {
@@ -134,8 +145,8 @@ input[type="radio"]:checked+label {
 
 footer {
   background: #E7F1F1;
-  position: absolute;
-  border: 2px solid black;
+  height: 50px;
+  width: 100%;
 }
 
 /* 
