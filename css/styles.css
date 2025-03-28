@@ -44,28 +44,50 @@ legend {
 }
 
 fieldset {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  border: 1px solid #235558;
+  align-items: flex-start;
+  gap: 15px;
+  border: 2px solid #bababa;
   border-radius: 15px;
+  width: auto;
   padding: 10px;
   margin: 10px 0;
+}
+
+legend {
+  padding: 10px;
+  border: 2px solid #bababa;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
 input[type="radio"] {
   display: none;
 }
 
-.btn {
+.abc-index {
+  padding: 4px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  /* border: #6FB686 solid 2px; */
+  background-color: #F4F7F7;
+}
+
+label.btn,
+button.submit-btn {
   display: inline-block;
   background-color: #BFF6D4;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 25px;
   border: #6FB686 solid 2px;
   cursor: pointer;
 }
 
-.btn:hover {
+label.btn:hover,
+button.submit-btn:hover {
   background-color: #b2daff;
   border: #004280 solid 2px;
   box-shadow: #235558 0px 0px 10px;
@@ -73,12 +95,18 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+label {
-  background-color: ;
-  color: ;
-  border-color: ;
+  background-color: #00ff62;
+  border-color: #00ff62;
 }
 
+.submit-btn {
+  align-self: flex-end;
+}
 
-
-
-button.btn {}
+/* 
+- fix the shadows on answer btn when hoovering 
+- maybe other colors idk 
+- fix the font size of the question?
+- fix the font size of the submit button
+- fix legend size and centering
+*/
