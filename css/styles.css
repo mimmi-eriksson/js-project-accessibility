@@ -33,7 +33,13 @@ body {
 }
 
 .question {
-  color: 235558;
+  color: #235558;
+  font-weight: bold;
+}
+
+legend {
+  font-weight: bold;
+  color: #8DC8A1;
 }
 
 fieldset {
@@ -43,4 +49,8 @@ fieldset {
   border-radius: 15px;
   padding: 10px;
   margin: 10px 0;
+}
+
+input[type="radio"] {
+  display: none;
 }
