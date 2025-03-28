@@ -5,13 +5,23 @@ html {
   box-sizing: border-box;
   font-family: "Lexend", Arial, Helvetica, sans-serif;
   font-weight: 300;
+  font-optical-sizing: auto;
 
 }
+
+
+body {
+  background-color: #F4F7F7;
+  color: 235558;
+  padding: 10px;
+}
+
 
 h1,
 h2 {
   font-weight: 400;
 }
+
 
 .skip-link {
   text-decoration: none;
@@ -58,10 +68,87 @@ li a {
 }
 
 
-
 .question {
   display: none;
+  color: #235558;
+  font-weight: bold;
 }
+
+fieldset {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  border: 2px solid lightgray;
+  border-radius: 15px;
+  width: auto;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+legend {
+  font-weight: bold;
+  color: #8DC8A1;
+  padding: 10px;
+  border: 2px solid lightgrey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.abc-index {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  /* border: #6FB686 solid 2px; */
+  background-color: #F4F7F7;
+  box-sizing: border-box;
+}
+
+label.btn,
+button.submit-btn,
+#start-button {
+  display: inline-block;
+  background-color: #BFF6D4;
+  padding: 10px 10px;
+  border-radius: 25px;
+  border: #6FB686 solid 2px;
+  cursor: pointer;
+}
+
+label.btn:hover,
+button.submit-btn:hover,
+#start-button:hover {
+  background-color: #b2daff;
+  border: #004280 solid 2px;
+  box-shadow: #235558 0px 0px 10px;
+
+}
+
+input[type="radio"]:checked+label {
+  background-color: #00ff62;
+  border-color: #00ff62;
+}
+
+.submit-btn {
+  align-self: flex-end;
+}
+
+/* 
+- fix the shadows on answer btn when hoovering 
+- maybe other colors idk 
+- fix the font size of the question?
+- fix the font size of the submit button
+- fix legend size and centering
+*/
 
 
 

@@ -2,7 +2,7 @@
 // DOM selectors
 startQuizButton = document.getElementById('start-button')
 questions = document.querySelectorAll('.question')
-submitButtons = document.querySelectorAll('.submit-button')
+submitButtons = document.querySelectorAll('.submit-btn')
 
 // initialize current question counter
 let currentQuestionIndex = 0
