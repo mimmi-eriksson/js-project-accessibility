@@ -8,11 +8,6 @@ html {
 
 }
 
-h1,
-h2 {
-  font-weight: 400;
-}
-
 /* LEXEND font class for a variable style
 
 // <weight>: Use a value from 100 to 900
@@ -25,3 +20,27 @@ h2 {
   font-style: normal;
 }
   */
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+body {
+  background-color: #F4F7F7;
+  color: 235558;
+  padding: 10px;
+}
+
+.question {
+  color: 235558;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #235558;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px 0;
+}
