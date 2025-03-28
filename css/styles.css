@@ -5,6 +5,7 @@ html {
   box-sizing: border-box;
   font-family: "Lexend", Arial, Helvetica, sans-serif;
   font-weight: 300;
+  font-optical-sizing: auto;
 
 }
 
@@ -55,10 +56,29 @@ input[type="radio"] {
   display: none;
 }
 
-label.btn {
+.btn {
   display: inline-block;
   background-color: #BFF6D4;
   padding: 10px 20px;
   border-radius: 25px;
-  border: #6FB686 solid 1px;
+  border: #6FB686 solid 2px;
+  cursor: pointer;
 }
+
+.btn:hover {
+  background-color: #b2daff;
+  border: #004280 solid 2px;
+  box-shadow: #235558 0px 0px 10px;
+
+}
+
+input[type="radio"]:checked+label {
+  background-color: ;
+  color: ;
+  border-color: ;
+}
+
+
+
+
+button.btn {}
