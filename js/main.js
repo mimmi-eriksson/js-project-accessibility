@@ -12,7 +12,7 @@ const setActiveQuestion = (index) => {
   // show the active question - hide the others
   questions.forEach((question, i) => {
     if (i === index) {
-      question.style.display = 'block'
+      question.style.display = 'inline-flex'
     } else {
       question.style.display = 'none'
     }

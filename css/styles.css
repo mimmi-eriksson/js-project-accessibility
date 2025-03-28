@@ -9,19 +9,16 @@ html {
 
 }
 
-
 body {
   background-color: #F4F7F7;
   color: 235558;
   padding: 10px;
 }
 
-
 h1,
 h2 {
   font-weight: 400;
 }
-
 
 .skip-link {
   text-decoration: none;
@@ -44,7 +41,6 @@ li a {
   text-decoration: none;
   color: black;
   padding: 10px;
-
 }
 
 #introduction {
@@ -67,33 +63,28 @@ li a {
   line-height: 1.6;
 }
 
+legend {
+  font-weight: bold;
+  color: #8DC8A1;
+  padding: 10px;
+  border: 2px solid #bababa;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
 
 .question {
   display: none;
   color: #235558;
   font-weight: bold;
-}
-
-fieldset {
-  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  border: 2px solid lightgray;
+  border: 2px solid #bababa;
   border-radius: 15px;
   width: auto;
   padding: 10px;
   margin: 10px 0;
-}
-
-legend {
-  font-weight: bold;
-  color: #8DC8A1;
-  padding: 10px;
-  border: 2px solid lightgrey;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
 }
 
 input[type="radio"] {
@@ -142,6 +133,12 @@ input[type="radio"]:checked+label {
   align-self: flex-end;
 }
 
+footer {
+  background: #E7F1F1;
+  position: absolute;
+  border: 2px solid black;
+}
+
 /* 
 - fix the shadows on answer btn when hoovering 
 - maybe other colors idk 
@@ -150,13 +147,6 @@ input[type="radio"]:checked+label {
 - fix legend size and centering
 */
 
-
-
-footer {
-  background: #E7F1F1;
-  position: absolute;
-  border: 2px solid black;
-}
 
 /* LEXEND font class for a variable style
 
