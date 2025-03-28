@@ -11,7 +11,7 @@ html {
 
 body {
   background-color: #F4F7F7;
-  color: 235558;
+  color: #262626;
 }
 
 main {
@@ -25,7 +25,8 @@ h2 {
 
 .skip-link {
   text-decoration: none;
-  color: black;
+  color: #262626;
+  cursor: pointer;
 }
 
 header {
@@ -109,7 +110,6 @@ input[type="radio"] {
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  /* border: #6FB686 solid 2px; */
   background-color: #F4F7F7;
   box-sizing: border-box;
 }
