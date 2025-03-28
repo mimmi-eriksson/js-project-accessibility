@@ -8,7 +8,34 @@ html {
 
 }
 
+h1,
+h2 {
+  font-weight: 400;
+}
 
+.skip-link {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  background: #E7F1F1;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+
+}
 
 #introduction {
   background-color: #A5C97B;
@@ -32,13 +59,16 @@ html {
 
 
 
-h1,
-h2 {
-  font-weight: 400;
-}
-
 .question {
   display: none;
+}
+
+
+
+footer {
+  background: #E7F1F1;
+  position: absolute;
+  border: 2px solid black;
 }
 
 /* LEXEND font class for a variable style
