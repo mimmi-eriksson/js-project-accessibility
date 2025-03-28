@@ -70,10 +70,11 @@ li a {
 }
 
 #about {
-  background-color: #A5C97B;
-  padding: 72px 27px 68px 27px;
-  text-align: center;
+  /* background-color: #A5C97B; */
+  /* padding: 72px 27px 68px 27px; */
+  /* text-align: center; */
   color: #262626;
+  margin: auto;
 }
 
 #about h2 {
@@ -84,7 +85,7 @@ li a {
 
 #about p {
   max-width: 600px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-size: 16px;
   line-height: 1.6;
 }
