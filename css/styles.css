@@ -8,11 +8,12 @@ html {
 
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 400;
 }
 
-.skip-link{
+.skip-link {
   text-decoration: none;
   color: black;
 }
@@ -20,9 +21,15 @@ h1, h2 {
 header {
   background: #E7F1F1;
 }
+
 ul {
   display: flex;
 }
+
+li {
+  list-style: none;
+}
+
 li a {
   text-decoration: none;
   color: black;
