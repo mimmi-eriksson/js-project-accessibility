@@ -50,7 +50,7 @@ li a {
 }
 
 #introduction {
-  background-color: #A5C97B;
+  /* background-color: #A5C97B; */
   padding: 72px 27px 68px 27px;
   text-align: center;
   color: #262626;
@@ -90,6 +90,12 @@ li a {
   line-height: 1.6;
 }
 
+img {
+  width: 100%;
+  /* height: auto; */
+  max-width: 100%;
+  height: auto;
+}
 
 #quiz {
   display: flex;
