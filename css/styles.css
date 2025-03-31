@@ -72,6 +72,7 @@ li a {
   position: absolute;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.4);
+  /* #E7F1F1 */
   padding: 1rem;
 }
 
@@ -110,6 +111,7 @@ li a {
   text-align: center;
   color: #262626;
   margin: 1rem auto;
+  min-height: 90vh;
 }
 
 .descriptive-img {
@@ -135,9 +137,10 @@ li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  margin: 1rem auto;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+  margin: 2rem auto;
 }
 
 legend {
@@ -228,9 +231,9 @@ input[type="radio"]:focus+label {
   align-self: flex-end;
 }
 
-
-
 footer {
+  /* position: absolute; */
+  /* bottom: 0; */
   background: #E7F1F1;
   height: 50px;
   width: 100%;
