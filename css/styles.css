@@ -15,7 +15,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 400;
 }
 
@@ -93,8 +94,8 @@ li a {
 
 
 #introduction h2 {
-  font-size: 24px;
-  font-weight: 600;
+  /* font-size: 24px; */
+  /* font-weight: 600; */
   margin-bottom: 1rem;
 }
 
@@ -167,7 +168,7 @@ legend {
   border-radius: 15px;
   width: auto;
   padding: 10px;
-  margin: 10px 0;
+  /* margin: 10px 0; */
 }
 
 input[type="radio"] {
