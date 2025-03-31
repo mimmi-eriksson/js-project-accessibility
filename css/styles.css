@@ -14,10 +14,6 @@ body {
   color: #262626;
 }
 
-main {
-  padding: 10px;
-}
-
 h1,
 h2 {
   font-weight: 400;
@@ -62,9 +58,18 @@ li a {
 
 #introduction {
   /* background-color: #A5C97B; */
-  padding: 72px 27px 68px 27px;
+  /* margin: 72px 27px 68px 27px; */
+  /* one can add this in the media query*/
+  margin: 30px auto;
   text-align: center;
   color: #262626;
+}
+
+.decorative-image {
+  /* transform: rotate(90deg); */
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 #introduction h2 {
@@ -75,7 +80,7 @@ li a {
 
 #introduction p {
   max-width: 600px;
-  margin: 0 auto;
+  margin-bottom: 1rem;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -101,24 +106,27 @@ li a {
   line-height: 1.6;
 }
 
-img {
+/* img {
   width: 100%;
-  /* height: auto; */
-  max-width: 100%;
+ max-width: 100%;
   height: auto;
-}
+} */
 
 #quiz {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 50px;
+  padding: 20px;
 }
 
 legend {
-  font-weight: bold;
-  color: #8DC8A1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #235558;
+  background-color: #BFF6D4;
   padding: 10px;
   border: 2px solid #bababa;
   border-radius: 50%;
@@ -159,6 +167,8 @@ label.btn,
 button.submit-btn,
 #start-button {
   display: inline-block;
+  color: #235558;
+  font-size: 16px;
   background-color: #BFF6D4;
   padding: 10px 10px;
   border-radius: 25px;
