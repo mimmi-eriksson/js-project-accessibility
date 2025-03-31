@@ -143,7 +143,7 @@ li a {
   align-items: center;
   justify-content: center;
   /* min-height: 50vh; */
-  gap: 1rem;
+  /* gap: 1rem; */
   margin: 2rem auto;
 }
 
@@ -196,6 +196,11 @@ input[type="radio"] {
   box-sizing: border-box;
 }
 
+.submit-btn {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
 label.btn,
 button.submit-btn,
 #start-button {
@@ -236,10 +241,6 @@ input[type="radio"]:focus+label {
   outline-offset: 5px;
 }
 
-
-.submit-btn {
-  align-self: flex-end;
-}
 
 footer {
   /* position: absolute; */
