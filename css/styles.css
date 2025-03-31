@@ -175,7 +175,11 @@ button.submit-btn:hover,
 }
 
 /* style buttons when in focus */
-
+button.submit-btn:focus,
+#start-button:focus {
+  outline: 2px solid #235558;
+  outline-offset: 5px;
+}
 
 
 input[type="radio"]:checked+label {
@@ -184,7 +188,10 @@ input[type="radio"]:checked+label {
 }
 
 /* style label when radio button is in focus */
-
+input[type="radio"]:focus+label {
+  outline: 2px solid #235558;
+  outline-offset: 5px;
+}
 
 
 .submit-btn {
