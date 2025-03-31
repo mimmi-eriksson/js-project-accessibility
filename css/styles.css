@@ -6,12 +6,11 @@ html {
   font-family: "Lexend", Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-optical-sizing: auto;
-
 }
 
 body {
   background-color: #F4F7F7;
-  color: #262626;
+  color: #235558;
 }
 
 h1,
@@ -19,6 +18,7 @@ h2,
 h3 {
   font-weight: 400;
   margin-bottom: 1rem;
+  padding: 10px;
 }
 
 .skip-link {
@@ -41,21 +41,29 @@ h3 {
 
 #header {
   background: #E7F1F1;
-  padding: 10px;
+  padding-bottom: 10px;
+  /* padding: 10px; */
 }
 
-ul {
+.nav-list {
   display: flex;
-}
-
-li {
+  gap: 1rem;
+  text-decoration: none;
   list-style: none;
 }
 
-li a {
+a {
   text-decoration: none;
-  color: black;
+  font-size: 20px;
+  font-weight: 400;
+  color: #235558;
   padding: 10px;
+}
+
+a:hover {
+  background-color: #CCE3E4;
+  /* color: ; */
+  /* text-decoration: underline; */
 }
 
 #introduction {
@@ -67,7 +75,7 @@ li a {
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  color: #262626;
+  /* color: #262626; */
 }
 
 .text-container {
@@ -111,7 +119,7 @@ li a {
   /* background-color: #A5C97B; */
   /* padding: 72px 27px 68px 27px; */
   text-align: center;
-  color: #262626;
+  /* color: #262626; */
   margin: 1rem auto;
   min-height: 90vh;
 }
@@ -170,8 +178,9 @@ legend {
   border: 2px solid #bababa;
   border-radius: 15px;
   width: auto;
-  padding: 10px;
-  /* margin: 10px 0; */
+  padding: 5px;
+  margin: 5px;
+  /*improve margin and padding when on media querry*/
 }
 
 .answer-options {
