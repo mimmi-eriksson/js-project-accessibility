@@ -98,6 +98,7 @@ a:hover {
 .img-container {
   position: relative;
   background-color: #E9F1F1;
+  background: -webkit-linear-gradient(#CCE3E4cc, #F5F7F7cc);
   top: 0;
   z-index: -1;
   width: 100%;
@@ -111,6 +112,7 @@ a:hover {
   height: auto;
   object-fit: cover;
   opacity: 0.3;
+
 }
 
 
