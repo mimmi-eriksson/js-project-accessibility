@@ -91,13 +91,13 @@ a:hover {
 .text-container {
   position: absolute;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.4);
   /* #E7F1F1 */
   padding: 1rem;
 }
 
 .img-container {
   position: relative;
+  background-color: rgba(255, 255, 255, 0.4);
   top: 0;
   z-index: -1;
   width: 100%;
@@ -278,25 +278,3 @@ footer {
   height: 50px;
   width: 100%;
 }
-
-/* 
-- fix the shadows on answer btn when hoovering 
-- maybe other colors idk 
-- fix the font size of the question?
-- fix the font size of the submit button
-- fix legend size and centering
-*/
-
-
-/* LEXEND font class for a variable style
-
-// <weight>: Use a value from 100 to 900
-// <uniquifier>: Use a unique and descriptive class name
-
-.lexend-<uniquifier> {
-  font-family: "Lexend", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-  */
