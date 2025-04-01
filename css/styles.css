@@ -24,6 +24,13 @@ h3 {
   padding: 10px;
 }
 
+p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -111,12 +118,12 @@ a:hover {
   margin-bottom: 1rem;
 } */
 
-#introduction p {
+/* #introduction p {
   max-width: 600px;
   margin: 0 auto;
   font-size: 16px;
   line-height: 1.6;
-}
+} */
 
 #about {
   /* background-color: #A5C97B; */
@@ -124,7 +131,15 @@ a:hover {
   text-align: center;
   /* color: #262626; */
   margin: 1rem auto;
-  min-height: 90vh;
+  /* min-height: 90vh; */
+}
+
+.navigation-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 4rem;
 }
 
 .descriptive-img {
@@ -139,12 +154,12 @@ a:hover {
   margin-bottom: 1rem;
 } */
 
-#about p {
+/* #about p {
   max-width: 600px;
   margin: 0 auto;
   font-size: 16px;
   line-height: 1.6;
-}
+} */
 
 /*quiz styling*/
 
@@ -205,6 +220,7 @@ input[type="radio"] {
   width: 25px;
   border-radius: 50%;
   background-color: #F4F7F7;
+  border: #6FB686 solid 2px;
   box-sizing: border-box;
 }
 
