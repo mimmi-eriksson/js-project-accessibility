@@ -44,7 +44,7 @@ const startQuiz = () => {
 
 // function to check selected answer
 const checkAnswer = () => {
-  // get current radio group of current question
+  // get radio group of current question
   const radioGroup = questions[currentQuestionIndex].querySelectorAll('input[type="radio"]')
   // loop through radio group to find selected answer
   let answer
@@ -53,30 +53,48 @@ const checkAnswer = () => {
   })
   // check if selected answer is correct
   if (answer) {
+    // clear error message if any
+    clearError(questions[currentQuestionIndex].querySelector('.error'))
+    // get correct answer
     const correctOption = correctAnswers[currentQuestionIndex]
     if (answer === correctOption) {
       // add 1 point to score
       score += 1
       // display feedback message
-      displayFeedback(correctMessages[currentQuestionIndex], 'valid')
+      displayFeedback(correctMessages[currentQuestionIndex])
     } else {
       // display feedback message
       const wrongMessage = `That's not quite right.. The correct answer is ${correctOption.toUpperCase()}.`
-      displayFeedback(wrongMessage, 'valid')
+      displayFeedback(wrongMessage)
     }
   } else {
-    // if no option is selected - show message to user to select an option
-    displayFeedback('Please select your answer', 'invalid')
+    // if no option is selected - show eror message to user to select an option
+    showError(questions[currentQuestionIndex].querySelector('.error'), 'Please select your answer')
+    // set focus to first option
+    questions[currentQuestionIndex].querySelector('input[type="radio"]').focus()
   }
 }
 
+// show error message if no option is selected
+const showError = (errorElement, message) => {
+  errorElement.textContent = message
+  errorElement.style.display = 'block'
+}
+
+// clear error message 
+const clearError = (ErrorElement) => {
+  ErrorElement.textContent = ''
+  ErrorElement.style.display = 'none'
+}
+
 // show feedback message
-const displayFeedback = (message, messageType) => {
+const displayFeedback = (message) => {
   // display message
   messageContainer.innerHTML = `
         <p>${message}</p>
         <button class="continue-btn">Continue</button>
       `
+  messageContainer.style.display = 'flex'
   // set focus to continue button
   const continueButton = messageContainer.querySelector('.continue-btn')
   continueButton.focus()
@@ -84,22 +102,15 @@ const displayFeedback = (message, messageType) => {
   continueButton.addEventListener('click', () => {
     // clear feedback message
     messageContainer.innerHTML = ''
-    switch (messageType) {
-      case 'valid':
-        // if last question - end quiz
-        if (currentQuestionIndex === (questions.length - 1)) {
-          endQuiz()
-        } else {
-          // else - go to next question
-          const nextQuestionIndex = (currentQuestionIndex + 1)
-          setActiveQuestion(nextQuestionIndex)
-          currentQuestionIndex = nextQuestionIndex
-        }
-        break
-      case 'invalid':
-        // set focus back to current question
-        setActiveQuestion(currentQuestionIndex)
-        break
+    messageContainer.style.display = 'none'
+    // if last question - end quiz
+    if (currentQuestionIndex === (questions.length - 1)) {
+      endQuiz()
+    } else {
+      // else - go to next question
+      const nextQuestionIndex = (currentQuestionIndex + 1)
+      setActiveQuestion(nextQuestionIndex)
+      currentQuestionIndex = nextQuestionIndex
     }
   })
 }
@@ -115,6 +126,7 @@ const endQuiz = () => {
     <p>Score: ${score}/${questions.length}</p>
     <button class="continue-btn" type="button">Take quiz again</button>
   `
+  resultsContainer.style.display = 'flex'
   // set focus to button
   const continueButton = resultsContainer.querySelector('.continue-btn')
   continueButton.focus()
@@ -126,6 +138,7 @@ const endQuiz = () => {
     score = 0
     // clear container
     resultsContainer.innerHTML = ''
+    resultsContainer.style.display = 'none'
     // start quiz
     startQuiz()
   })

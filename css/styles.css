@@ -188,7 +188,8 @@ input[type="radio"] {
 
 label.btn,
 button.submit-btn,
-#start-button {
+#start-button,
+.continue-btn {
   display: inline-block;
   color: #235558;
   font-size: 16px;
@@ -201,7 +202,8 @@ button.submit-btn,
 
 label.btn:hover,
 button.submit-btn:hover,
-#start-button:hover {
+#start-button:hover,
+.continue-btn:hover {
   background-color: #b2daff;
   border: #004280 solid 2px;
   box-shadow: #235558 0px 0px 10px;
@@ -209,7 +211,8 @@ button.submit-btn:hover,
 
 /* style buttons when in focus */
 button.submit-btn:focus,
-#start-button:focus {
+#start-button:focus,
+.continue-btn:focus {
   outline: 2px solid #235558;
   outline-offset: 5px;
 }
@@ -231,12 +234,50 @@ input[type="radio"]:focus+label {
   align-self: flex-end;
 }
 
+
 footer {
   /* position: absolute; */
   /* bottom: 0; */
   background: #E7F1F1;
   height: 50px;
   width: 100%;
+}
+
+
+.error {
+  color: red;
+}
+
+.message-container {
+  display: none;
+  color: #235558;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  border: 2px solid #bababa;
+  border-radius: 15px;
+  width: auto;
+  max-width: 500px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.results-container {
+  display: none;
+  color: #235558;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid #bababa;
+  border-radius: 15px;
+  width: auto;
+  max-width: 500px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.results-container p {
+  font-size: 24px;
 }
 
 /* 
