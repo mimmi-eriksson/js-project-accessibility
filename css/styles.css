@@ -97,7 +97,7 @@ a:hover {
 
 .img-container {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #E9F1F1;
   top: 0;
   z-index: -1;
   width: 100%;
@@ -109,6 +109,8 @@ a:hover {
   max-width: 100%;
   width: 100%;
   height: auto;
+  object-fit: cover;
+  opacity: 0.3;
 }
 
 
