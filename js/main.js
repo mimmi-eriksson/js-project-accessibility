@@ -30,6 +30,7 @@ const setActiveQuestion = (index) => {
     } else {
       question.style.display = 'none'
     }
+
   });
 }
 
@@ -52,15 +53,15 @@ const checkAnswer = () => {
   })
   // check if selected answer is correct
   if (answer) {
-    const correctAnswer = correctAnswers[currentQuestionIndex]
-    if (answer === correctAnswer) {
+    const correctOption = correctAnswers[currentQuestionIndex]
+    if (answer === correctOption) {
       // add 1 point to score
       score += 1
       // display feedback message
       displayFeedback(correctMessages[currentQuestionIndex], 'valid')
     } else {
       // display feedback message
-      const wrongMessage = `That's not quite right.. The correct answer is ${correctAnswer}.`
+      const wrongMessage = `That's not quite right.. The correct answer is ${correctOption.toUpperCase()}.`
       displayFeedback(wrongMessage, 'valid')
     }
   } else {
@@ -80,9 +81,11 @@ const displayFeedback = (message, messageType) => {
   const continueButton = messageContainer.querySelector('.continue-btn')
   continueButton.focus()
   // set event listener on the continue button based on the the message type
-  switch (messageType) {
-    case 'valid':
-      continueButton.addEventListener('click', () => {
+  continueButton.addEventListener('click', () => {
+    // clear feedback message
+    messageContainer.innerHTML = ''
+    switch (messageType) {
+      case 'valid':
         // if last question - end quiz
         if (currentQuestionIndex === (questions.length - 1)) {
           endQuiz()
@@ -92,27 +95,21 @@ const displayFeedback = (message, messageType) => {
           setActiveQuestion(nextQuestionIndex)
           currentQuestionIndex = nextQuestionIndex
         }
-        // clear feedback message
-        messageContainer.innerHTML = ''
-      })
-    case 'invalid':
-      continueButton.addEventListener('click', () => {
+        break
+      case 'invalid':
         // set focus back to current question
         setActiveQuestion(currentQuestionIndex)
-        // delete feedback message
-        messageContainer.innerHTML = ''
-      })
-  }
+        break
+    }
+  })
 }
 
 // end quiz
 const endQuiz = () => {
   // hide all questions
-  // ------------------------THIS DOESN'T WORK!!! NEED TO FIX---------------
-  questions.forEach((question) => {
+  questions.forEach(question => {
     question.style.display = 'none'
   })
-  //------------------------------------------------------------------------
   // show results
   resultsContainer.innerHTML = `
     <p>Score: ${score}/${questions.length}</p>
@@ -120,7 +117,7 @@ const endQuiz = () => {
   `
   // set focus to button
   const continueButton = resultsContainer.querySelector('.continue-btn')
-  // continueButton.focus()
+  continueButton.focus()
   // set event listener to take the quiz again
   continueButton.addEventListener('click', () => {
     // reset current question index
@@ -132,6 +129,8 @@ const endQuiz = () => {
     // start quiz
     startQuiz()
   })
+
+
 }
 
 // start quiz when start button is selected
