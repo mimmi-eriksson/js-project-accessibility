@@ -40,6 +40,8 @@ const startQuiz = () => {
   setActiveQuestion(currentQuestionIndex)
   // hide start button
   startQuizButton.style.display = 'none'
+  //announce to the screen reader
+  announcer.textcontent = 'Moved to first question'
 }
 
 // function to check selected answer
@@ -111,6 +113,8 @@ const displayFeedback = (message) => {
       const nextQuestionIndex = (currentQuestionIndex + 1)
       setActiveQuestion(nextQuestionIndex)
       currentQuestionIndex = nextQuestionIndex
+      //announce to the screen reader
+      announcer.textContent = 'Moved to next question'
     }
   })
 }

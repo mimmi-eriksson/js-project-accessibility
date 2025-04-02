@@ -34,7 +34,7 @@
   >Skip to main content</a>
   <header id="header">
     <div class="header-content">
-      <h1>Web Accessibility Quiz</h1> <!-- add a smiley :)-->
+      <h1>Web Accessibility Quiz</h1>
       <nav
         role="navigation"
         aria-label="Main menu"
@@ -54,7 +54,6 @@
 
   <main id="main-content">
 
-
     <section id="introduction">
       <div class="text-container">
         <h2>Welcome to our quiz</h2>
@@ -66,6 +65,7 @@
           class="decorative-img"
           src="assets/img1.jpg"
           alt=""
+          role="presentation"
         >
       </div>
     </section>
@@ -77,10 +77,14 @@
         type="button"
         class="btn"
       >Start Quiz</button>
+
       <fieldset class="question">
         <legend>1</legend>
         <p>What does WCAG stand for?</p>
-        <div class="error"></div>
+        <div
+          class="error"
+          role="alert"
+        ></div>
         <span>
           <input
             type="radio"
@@ -94,7 +98,6 @@
           ><span class="abc-index">A</span> World Content
             Accessibility Guidelines
           </label>
-          <!--USER SHOULD BE ABLE TO PRESS A ON KEYBOARD-->
         </span>
         <span>
           <input
@@ -107,7 +110,6 @@
             class="btn"
             for="q1b"
           ><span class="abc-index">B</span> World Wide Web Consortium</label>
-          <!--USER SHOULD BE ABLE TO PRESS B ON KEYBOARD-->
         </span>
         <span>
           <input
@@ -120,7 +122,6 @@
             class="btn"
             for="q1c"
           ><span class="abc-index">C</span> Web Content Accessibility Guidelines</label>
-          <!--USER SHOULD BE ABLE TO PRESS C ON KEYBOARD-->
         </span>
         <button
           class="submit-btn"
@@ -131,7 +132,10 @@
       <fieldset class="question">
         <legend>2</legend>
         <p>What is the most common target of WCAG level of conformance for many websites?</p>
-        <div class="error"></div>
+        <div
+          class="error"
+          role="alert"
+        ></div>
         <span>
           <input
             type="radio"
@@ -177,7 +181,10 @@
       <fieldset class="question">
         <legend>3</legend>
         <p>What is the purpose of ARIA landmark roles?</p>
-        <div class="error"></div>
+        <div
+          class="error"
+          role="alert"
+        ></div>
         <span>
           <input
             type="radio"
@@ -224,7 +231,10 @@
       <fieldset class="question">
         <legend>4</legend>
         <p>What is a "keyboard trap" in web accessibility?</p>
-        <div class="error"></div>
+        <div
+          class="error"
+          role="alert"
+        ></div>
         <span>
           <input
             type="radio"
@@ -268,13 +278,21 @@
           type="submit"
         >Submit</button>
       </fieldset>
+
       <div
         id="message-container"
         class="message-container"
       ></div>
+
       <div
         id="results-container"
         class="results-container"
+      ></div>
+
+      <div
+        id="announcer"
+        class="visually-hidden"
+        aria-live="polite"
       ></div>
 
     </section>
