@@ -16,6 +16,11 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  font-size: 27px;
+}
+
+
 h1,
 h2,
 h3 {
