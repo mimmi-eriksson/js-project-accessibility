@@ -267,12 +267,12 @@ footer {
   color: #235558;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 30px;
   border: 2px solid #bababa;
   border-radius: 15px;
   width: auto;
   max-width: 500px;
-  padding: 20px;
+  padding: 50px;
   margin: 10px 0;
 }
 
