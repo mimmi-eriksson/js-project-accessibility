@@ -381,3 +381,26 @@ footer {
   }
   }
 
+/* Base styles (default on mobile) */
+body {
+  font-size: 16px;
+}
+
+/* iPad Mini and above */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+}

@@ -41,7 +41,7 @@ const startQuiz = () => {
   // hide start button
   startQuizButton.style.display = 'none'
   //announce to the screen reader
-  announcer.textcontent = 'Moved to first question'
+  announcer.textContent = 'Moved to first question'
 }
 
 // function to check selected answer
@@ -84,7 +84,7 @@ const showError = (errorElement, message) => {
 }
 
 // clear error message 
-const clearError = (ErrorElement) => {
+const clearError = (errorElement) => {
   ErrorElement.textContent = ''
   ErrorElement.style.display = 'none'
 }
