@@ -173,7 +173,6 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin: 2rem auto;
-  height: 50vh;
 }
 
 legend {
@@ -307,7 +306,7 @@ footer {
   width: auto;
   max-width: 500px;
   padding: 20px;
-  margin: 10px 0;
+  margin: 10px 5px;
 }
 
 .results-container {
