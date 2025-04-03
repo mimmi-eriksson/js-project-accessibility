@@ -166,7 +166,7 @@ const endQuiz = () => {
   // show results
   resultsContainer.innerHTML = `
     <h2>🎉 Congratulations! 🎉</h2>
-    <img src="img/celebration.png" alt="celebration image" class="celebration-image">
+    <img src="./assets/celebration.gif" alt="celebration image" class="celebration-image">
     <p>Thank you for taking the quiz! i hope you learned something about web accessibility.</p>
     <p>Score: ${score}/${questions.length}</p>
 
