@@ -127,7 +127,10 @@ const endQuiz = () => {
   })
   // show results
   resultsContainer.innerHTML = `
+    <h2>🎉 Congratulations! 🎉</h2>
     <p>Score: ${score}/${questions.length}</p>
+    <img src="img/celebration.png" alt="celebration image" class="celebration-img">
+    <p>Thank you for taking the quiz! We hope you learned something new about web accessibility.</p>
     <button class="continue-btn" type="button">Take quiz again</button>
   `
   resultsContainer.style.display = 'flex'
