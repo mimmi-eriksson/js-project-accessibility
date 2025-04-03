@@ -280,11 +280,6 @@ input[type="radio"]:focus+label {
 }
 
 
-.submit-btn {
-  align-self: flex-end;
-}
-
-
 footer {
   /* position: absolute; */
   /* bottom: 0; */
