@@ -123,6 +123,8 @@ const displayFeedback = (message) => {
     // if last question - end quiz
     if (currentQuestionIndex === (questions.length - 1)) {
       endQuiz()
+      //announce to the screen reader
+      announcer.textContent = 'Moved to results section'
     } else {
       // else - go to next question
       const nextQuestionIndex = (currentQuestionIndex + 1)
@@ -172,7 +174,10 @@ startQuizButton.addEventListener('click', startQuiz)
 
 // check answer when submit button is selected
 submitButtons.forEach(button => {
-  button.addEventListener('click', () => checkAnswer())
+  button.addEventListener('click', (e) => {
+    e.preventDefault() // prevent page reload
+    checkAnswer()
+  })
 })
 
 // event listener to handle keyboard input for questions
