@@ -80,7 +80,7 @@
         class="btn"
       >Start Quiz</button>
       <!-- quiz starts -->
-      <fieldset class="question">
+      <fieldset class="question" aria-labelledby="q1-legend">
         <legend>1</legend>
         <h3>What does WCAG stand for?</h3>
         <div
@@ -134,7 +134,7 @@
         >Submit</button>
       </fieldset>
       <!-- question 2 -->
-      <fieldset class="question">
+      <fieldset class="question" aria-labelledby="q2-legend">
         <legend>2</legend>
         <h3>What is the most common target of WCAG level of conformance for many websites?</h3>
         <div
@@ -186,7 +186,7 @@
         >Submit</button>
       </fieldset>
       <!-- question 3 -->
-      <fieldset class="question">
+      <fieldset class="question" aria-labelledby="q3-legend">
         <legend>3</legend>
         <h3>What is the purpose of ARIA landmark roles?</h3>
         <div
@@ -239,7 +239,7 @@
         >Submit</button>
       </fieldset>
       <!-- question 4 -->
-      <fieldset class="question">
+      <fieldset class="question" aria-labelledby="q4-legend">
         <legend>4</legend>
         <h3>What is a "keyboard trap" in web accessibility?</h3>
         <div
@@ -304,6 +304,7 @@
     <section
       id="results-container"
       class="results-container"
+      aria-live ="polite"
       hidden
     ></section>
 
@@ -316,7 +317,7 @@
   </main>
 
   <footer id="footer">
-    <p></p>
+    <p> 2025 Web Accessibility Quiz</p>
   </footer>
   <script src="js/main.js"></script>
 </body>
@@ -324,3 +325,9 @@
 </html>
 
 <!--by Mimmi, Selin, Tiago and Alex – Technigo2025 -->
+
+<!--Fix footer-->
+<!--style result-container-->
+<!--look through aria-elements are we doing those correctly-->
+
+<!--new branch newfix-->

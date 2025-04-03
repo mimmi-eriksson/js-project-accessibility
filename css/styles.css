@@ -279,10 +279,13 @@ input[type="radio"]:focus+label {
   align-self: flex-end;
 }
 
+main{
+  flex-grow: 1;
+}
 
 footer {
-  /* position: absolute; */
-  /* bottom: 0; */
+  /* position: absolute;  */
+  /* bottom: 0;  */
   margin-top: auto;
   background: #E7F1F1;
   height: 50px;
@@ -371,6 +374,7 @@ footer {
     body {
       font-size: 1.2rem;
     }
+    
   }
   
 
