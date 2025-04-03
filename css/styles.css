@@ -331,6 +331,7 @@ footer p {
   max-width: 500px;
   padding: 50px;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .results-container p {
