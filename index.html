@@ -96,10 +96,13 @@
         id="quiz-form"
         hidden
       >
-        <fieldset class="question" aria-labelledby="q1-legend">
+        <fieldset class="question">
           <legend>1</legend>
           <h3>What does WCAG stand for?</h3>
-          <div class="answer-options">
+          <div
+            class="answer-options"
+            role="radiogroup"
+          >
             <div>
               <input
                 type="radio"
@@ -151,10 +154,13 @@
           >Submit</button>
         </fieldset>
         <!-- question 2 -->
-        <fieldset class="question" aria-labelledby="q2-legend">
+        <fieldset class="question">
           <legend>2</legend>
           <h3>What is the most common target of WCAG level of conformance for many websites?</h3>
-          <div class="answer-options">
+          <div
+            class="answer-options"
+            role="radiogroup"
+          >
             <div>
               <input
                 type="radio"
@@ -194,9 +200,9 @@
           </div>
 
           <div
-          class="error"
-          role="alert"
-        ></div>
+            class="error"
+            role="alert"
+          ></div>
           <!--submit answer -->
           <button
             class="submit-btn"
@@ -204,10 +210,13 @@
           >Submit</button>
         </fieldset>
         <!-- question 3 -->
-        <fieldset class="question" aria-labelledby="q3-legend">
+        <fieldset class="question">
           <legend>3</legend>
           <h3>What is the purpose of ARIA landmark roles?</h3>
-          <div class="answer-options">
+          <div
+            class="answer-options"
+            role="radiogroup"
+          >
             <div>
               <input
                 type="radio"
@@ -248,9 +257,9 @@
           </div>
 
           <div
-          class="error"
-          role="alert"
-        ></div>
+            class="error"
+            role="alert"
+          ></div>
           <!--submit answer -->
           <button
             class="submit-btn"
@@ -258,10 +267,13 @@
           >Submit</button>
         </fieldset>
         <!-- question 4 -->
-        <fieldset class="question" aria-labelledby="q4-legend">
+        <fieldset class="question">
           <legend>4</legend>
           <h3>What is a "keyboard trap" in web accessibility?</h3>
-          <div class="answer-options">
+          <div
+            class="answer-options"
+            role="radiogroup"
+          >
             <div>
               <input
                 type="radio"
@@ -305,9 +317,9 @@
           </div>
 
           <div
-          class="error"
-          role="alert"
-        ></div>
+            class="error"
+            role="alert"
+          ></div>
           <!--submit answer -->
           <button
             class="submit-btn"
@@ -319,6 +331,7 @@
       <div
         id="message-container"
         class="message-container"
+        aria-live="polite"
         hidden
       ></div>
 
@@ -327,7 +340,7 @@
     <section
       id="results-container"
       class="results-container"
-      aria-live ="polite"
+      aria-live="polite"
       hidden
     ></section>
 
