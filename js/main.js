@@ -41,7 +41,7 @@ const startQuiz = () => {
   // hide start button
   startQuizButton.style.display = 'none'
   //announce to the screen reader
-  announcer.textContent = 'Moved to first question'
+  announcer.textcontent = 'Moved to first question'
 }
 
 // function to check selected answer
@@ -84,7 +84,7 @@ const showError = (errorElement, message) => {
 }
 
 // clear error message 
-const clearError = (errorElement) => {
+const clearError = (ErrorElement) => {
   ErrorElement.textContent = ''
   ErrorElement.style.display = 'none'
 }
@@ -128,9 +128,10 @@ const endQuiz = () => {
   // show results
   resultsContainer.innerHTML = `
     <h2>🎉 Congratulations! 🎉</h2>
+    <img src="img/celebration.png" alt="celebration image" class="celebration-image">
+    <p>Thank you for taking the quiz! i hope you learned something about web accessibility.</p>
     <p>Score: ${score}/${questions.length}</p>
-    <img src="img/celebration.png" alt="celebration image" class="celebration-img">
-    <p>Thank you for taking the quiz! We hope you learned something new about web accessibility.</p>
+
     <button class="continue-btn" type="button">Take quiz again</button>
   `
   resultsContainer.style.display = 'flex'
