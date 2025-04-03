@@ -182,6 +182,13 @@ const endQuiz = () => {
     // clear container
     resultsContainer.innerHTML = ''
     resultsContainer.style.display = 'none'
+    // uncheck all radio options
+    questions.forEach((question) => {
+      const radios = question.querySelectorAll('input[type="radio"]')
+      radios.forEach((option) => {
+        option.checked = false
+      })
+    })
     // start quiz
     startQuiz()
   })
