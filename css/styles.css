@@ -294,6 +294,7 @@ footer {
 .error {
   color: red;
   font-size: 16px;
+  padding: 10px;
 }
 
 .message-container {
