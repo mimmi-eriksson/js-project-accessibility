@@ -282,8 +282,6 @@ input[type="radio"]:focus+label {
 
 
 footer {
-  /* position: absolute; */
-  /* bottom: 0; */
   margin-top: auto;
   background: #E7F1F1;
   height: 50px;
