@@ -23,6 +23,11 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.header-content h1 {
+  padding: 10px;
+}
+
+
 p {
   max-width: 500px;
   margin: 0 auto;
