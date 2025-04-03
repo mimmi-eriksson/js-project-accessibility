@@ -256,9 +256,9 @@ button.submit-btn:hover,
 }
 
 /* style buttons when in focus */
-button.submit-btn:focus,
-#start-button:focus,
-.continue-btn:focus {
+button.submit-btn:focus-visible,
+#start-button:focus-visible,
+.continue-btn:focus-visible {
   outline: 2px solid #235558;
   outline-offset: 5px;
 }
@@ -280,7 +280,7 @@ input[type="radio"]:focus+label {
   align-self: flex-end;
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
@@ -332,6 +332,7 @@ footer p {
   padding: 50px;
   margin: auto;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .results-container p {
@@ -358,6 +359,7 @@ footer p {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .results-container h2 {
   font-size: 28px;
   color: #235558;
@@ -397,7 +399,7 @@ footer p {
     body {
       font-size: 1.2rem;
     }
-    
+
   }
 
 
@@ -405,29 +407,5 @@ footer p {
     body {
       font-size: 1.4rem;
     }
-  }
-  }
-
-/* Base styles (default on mobile) */
-body {
-  font-size: 16px;
-}
-
-/* iPad Mini and above */
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 24px;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  h2 {
-    font-size: 38px;
-  }
-
-  p {
-    font-size: 22px;
   }
 }
