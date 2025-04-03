@@ -122,6 +122,7 @@ const displayFeedback = (message) => {
   // set focus to continue button
   const continueButton = messageContainer.querySelector('.continue-btn')
   continueButton.focus()
+  resultsContainer.scrollIntoView({ behaviour: 'smooth' })
   // set event listener on the continue button based on the the message type
   continueButton.addEventListener('click', () => {
     // clear feedback message
