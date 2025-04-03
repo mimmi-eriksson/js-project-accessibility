@@ -143,7 +143,7 @@ legend {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  color: #235558;
+  /* color: #235558; */
   background-color: #BFF6D4;
   padding: 10px;
   border: 2px solid #bababa;
@@ -154,7 +154,7 @@ legend {
 
 .question {
   display: none;
-  color: #235558;
+  /* color: #235558; */
   flex-direction: column;
   align-items: flex-start;
   border: 2px solid #bababa;
@@ -263,7 +263,7 @@ footer p {
 
 .message-container {
   display: none;
-  color: #235558;
+  /* color: #235558; */
   flex-direction: column;
   align-items: flex-end;
   gap: 15px;
@@ -277,7 +277,6 @@ footer p {
 
 .results-container {
   display: none;
-  color: #235558;
   flex-direction: column;
   align-items: center;
   gap: 30px;
