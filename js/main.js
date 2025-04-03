@@ -14,6 +14,8 @@ const questions = document.querySelectorAll('.question')
 const submitButtons = document.querySelectorAll('.submit-btn')
 const messageContainer = document.getElementById('message-container')
 const resultsContainer = document.getElementById('results-container')
+const progressFill = document.querySelector('.progress-fill')
+const progressText = document.querySelector('.progress-text')
 
 // initialize variables
 let currentQuestionIndex = 0 // current question counter
@@ -43,6 +45,8 @@ const startQuiz = () => {
   quiz.hidden = false
   // set first question
   setActiveQuestion(currentQuestionIndex)
+  // initialize progress bar
+  updateProgress()
   // hide start button
   startQuizButton.style.display = 'none'
   startQuizButton.hidden = true
@@ -134,10 +138,25 @@ const displayFeedback = (message) => {
       const nextQuestionIndex = (currentQuestionIndex + 1)
       setActiveQuestion(nextQuestionIndex)
       currentQuestionIndex = nextQuestionIndex
+      // update progress
+      updateProgress()
       //announce to the screen reader
       announcer.textContent = 'Moved to next question'
     }
   })
+}
+
+// update progress function
+const updateProgress = () => {
+  const totalQuestions = (questions.length)
+  const answeredQuestions = currentQuestionIndex + 1
+  const percentage = (answeredQuestions / totalQuestions) * 100
+  // update progress bar
+  progressFill.style.width = `${percentage}%`
+  // update progress text
+  progressText.textContent = `Question ${answeredQuestions} of ${totalQuestions}`
+  // announce to screen reader
+  announcer.textContent = `Question ${answeredQuestions} of ${totalQuestions}`
 }
 
 // end quiz
