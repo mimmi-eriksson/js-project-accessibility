@@ -1,6 +1,5 @@
 // correct answers with messages
 const correctAnswers = ['c', 'b', 'b', 'a']
-
 const correctMessages = [
   'Well done! The Web Content Accessibility Guidelines (WCAG) are a series of recommendations for making web content accessible to people with disabilities.',
   'Correct! Level AA tackles the biggest and most common barriers for disabled users. This is often the target for many websites.',
@@ -25,10 +24,12 @@ const setActiveQuestion = (index) => {
   questions.forEach((question, i) => {
     if (i === index) {
       question.style.display = 'inline-flex'
+      question.hidden = false
       // set focus on first option
       question.querySelector('input[type="radio"]').focus()
     } else {
       question.style.display = 'none'
+      question.hidden = true
     }
 
   });
@@ -40,6 +41,7 @@ const startQuiz = () => {
   setActiveQuestion(currentQuestionIndex)
   // hide start button
   startQuizButton.style.display = 'none'
+  startQuizButton.hidden = true
   //announce to the screen reader
   announcer.textcontent = 'Moved to first question'
 }
@@ -80,13 +82,13 @@ const checkAnswer = () => {
 // show error message if no option is selected
 const showError = (errorElement, message) => {
   errorElement.textContent = message
-  errorElement.style.display = 'block'
+  errorElement.hidden = false
 }
 
 // clear error message 
-const clearError = (ErrorElement) => {
-  ErrorElement.textContent = ''
-  ErrorElement.style.display = 'none'
+const clearError = (errorElement) => {
+  errorElement.textContent = ''
+  errorElement.hidden = true
 }
 
 // show feedback message
@@ -94,9 +96,21 @@ const displayFeedback = (message) => {
   // display message
   messageContainer.innerHTML = `
         <p>${message}</p>
-        <button class="continue-btn">Continue</button>
       `
   messageContainer.style.display = 'flex'
+  messageContainer.hidden = false
+  // continue button
+  // if last question - show results
+  if (currentQuestionIndex === (questions.length - 1)) {
+    messageContainer.innerHTML += `
+        <button class="continue-btn">Show results</button>
+      `
+  } else {
+    // else - next question
+    messageContainer.innerHTML += `
+        <button class="continue-btn">Next question</button>
+      `
+  }
   // set focus to continue button
   const continueButton = messageContainer.querySelector('.continue-btn')
   continueButton.focus()
@@ -105,6 +119,7 @@ const displayFeedback = (message) => {
     // clear feedback message
     messageContainer.innerHTML = ''
     messageContainer.style.display = 'none'
+    messageContainer.hidden = true
     // if last question - end quiz
     if (currentQuestionIndex === (questions.length - 1)) {
       endQuiz()
@@ -124,6 +139,7 @@ const endQuiz = () => {
   // hide all questions
   questions.forEach(question => {
     question.style.display = 'none'
+    question.hidden = true
   })
   // show results
   resultsContainer.innerHTML = `
@@ -131,6 +147,7 @@ const endQuiz = () => {
     <button class="continue-btn" type="button">Take quiz again</button>
   `
   resultsContainer.style.display = 'flex'
+  resultsContainer.hidden = false
   // set focus to button
   const continueButton = resultsContainer.querySelector('.continue-btn')
   continueButton.focus()
@@ -153,49 +170,48 @@ const endQuiz = () => {
 // start quiz when start button is selected
 startQuizButton.addEventListener('click', startQuiz)
 
-// go to next question when submit button is selected
+// check answer when submit button is selected
 submitButtons.forEach(button => {
   button.addEventListener('click', () => checkAnswer())
 })
 
+// event listener to handle keyboard input for questions
+questions.forEach((question) => {
+  const radioGroup = question.querySelector('.answer-options')
+  const submitButton = question.querySelector('.submit-btn')
+  // add event listener on the radio group
+  radioGroup.addEventListener('keydown', (event) => {
+    const optionInFocus = radioGroup.querySelector(":focus")
+    // let the user select option by pressing a,b, or c
+    // enter or space to select the option in focus
+    switch (event.key) {
+      case 'a':
+      case 'A':
+        event.preventDefault()
+        question.querySelector('input[value="a"]').checked = true
+        submitButton.focus()
+        break
+      case 'b':
+      case 'B':
+        event.preventDefault()
+        question.querySelector('input[value="b"]').checked = true
+        submitButton.focus()
+        break
+      case 'c':
+      case 'C':
+        event.preventDefault()
+        question.querySelector('input[value="c"]').checked = true
+        submitButton.focus()
+        break
+      case 'Enter':
+      case ' ':
+        event.preventDefault()
+        optionInFocus.checked = true
+        submitButton.focus()
+        break
+    }
 
+  })
 
-
-
-
-// forget the code below for now........
-// // event listener to handle user input for each qestion
-// document.addEventListener('keydown', (event) => {
-//   const currentQuestion = questions[currentQuestionIndex]
-//   const submitButton = currentQuestion.querySelector('.submit-button')
-
-//   // let the user select option by pressing a,b, or c on keyboard
-//   switch (event.key) {
-//     case 'a':
-//       event.preventDefault()
-//       currentQuestion.querySelector('input[value="a"]').checked = true
-//       submitButton.focus()
-//       break
-//     case 'b':
-//       event.preventDefault()
-//       currentQuestion.querySelector('input[value="b"]').checked = true
-//       submitButton.focus()
-//       break
-//     case 'c':
-//       event.preventDefault()
-//       currentQuestion.querySelector('input[value="c"]').checked = true
-//       submitButton.focus()
-//       break
-//   }
-
-//   // if submit button is clicked / or keyboard press enter - go to next question
-//   submitButton.addEventListener('keydown', (event) => {
-//     if (event.key === 'Enter') {
-//       const nextQuestionIndex = (currentQuestionIndex + 1) % questions.length
-//       currentQuestionIndex =
-//       setActiveQuestion(nextQuestionIndex)
-//     }
-
-//   })
-// })
+})
 
