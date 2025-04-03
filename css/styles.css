@@ -52,7 +52,6 @@ p {
 #header {
   background: #E7F1F1;
   padding-bottom: 10px;
-  /* padding: 10px; */
 }
 
 .nav-list {
@@ -72,26 +71,19 @@ a {
 
 a:hover {
   background-color: #CCE3E4;
-  /* color: ; */
-  /* text-decoration: underline; */
 }
 
 #introduction {
-  /* background-color: #A5C97B; */
-  /* margin: 72px 27px 68px 27px; */
-  /* one can add this in the media query*/
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  /* color: #262626; */
 }
 
 .text-container {
   position: absolute;
   width: 100%;
-  /* #E7F1F1 */
   padding: 1rem;
 }
 
@@ -115,27 +107,10 @@ a:hover {
 
 }
 
-
-/* #introduction h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 1rem;
-} */
-
-/* #introduction p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.6;
-} */
-
 #about {
-  /* background-color: #A5C97B; */
-  /* padding: 72px 27px 68px 27px; */
   text-align: center;
-  /* color: #262626; */
   margin: 1rem auto;
-  /* min-height: 90vh; */
+
 }
 
 .navigation-info {
@@ -151,19 +126,6 @@ a:hover {
   height: 100%;
   margin-top: 2rem;
 }
-
-/* #about h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 1rem;
-} */
-
-/* #about p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.6;
-} */
 
 /*quiz styling*/
 
@@ -195,13 +157,11 @@ legend {
   color: #235558;
   flex-direction: column;
   align-items: flex-start;
-  /* gap: 15px; */
   border: 2px solid #bababa;
   border-radius: 15px;
   width: auto;
   padding: 5px;
   margin: 5px;
-  /*improve margin and padding when on media querry*/
 }
 
 .answer-options {
@@ -344,25 +304,3 @@ footer p {
   white-space: nowrap;
   border: 0;
 }
-
-/* 
-- fix the shadows on answer btn when hoovering 
-- maybe other colors idk 
-- fix the font size of the question?
-- fix the font size of the submit button
-- fix legend size and centering
-*/
-
-
-/* LEXEND font class for a variable style
-
-// <weight>: Use a value from 100 to 900
-// <uniquifier>: Use a unique and descriptive class name
-
-.lexend-<uniquifier> {
-  font-family: "Lexend", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-  */
