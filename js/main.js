@@ -8,11 +8,12 @@ const correctMessages = [
 ]
 
 // DOM selectors
-startQuizButton = document.getElementById('start-button')
-questions = document.querySelectorAll('.question')
-submitButtons = document.querySelectorAll('.submit-btn')
-messageContainer = document.getElementById('message-container')
-resultsContainer = document.getElementById('results-container')
+const quiz = document.getElementById('quiz-form')
+const startQuizButton = document.getElementById('start-button')
+const questions = document.querySelectorAll('.question')
+const submitButtons = document.querySelectorAll('.submit-btn')
+const messageContainer = document.getElementById('message-container')
+const resultsContainer = document.getElementById('results-container')
 
 // initialize variables
 let currentQuestionIndex = 0 // current question counter
@@ -27,6 +28,7 @@ const setActiveQuestion = (index) => {
       question.hidden = false
       // set focus on first option
       question.querySelector('input[type="radio"]').focus()
+      question.scrollIntoView({ behaviour: 'smooth' })
     } else {
       question.style.display = 'none'
       question.hidden = true
@@ -37,7 +39,9 @@ const setActiveQuestion = (index) => {
 
 // function to start Quiz
 const startQuiz = () => {
-  // show first question
+  // show quiz
+  quiz.hidden = false
+  // set first question
   setActiveQuestion(currentQuestionIndex)
   // hide start button
   startQuizButton.style.display = 'none'
@@ -138,11 +142,8 @@ const displayFeedback = (message) => {
 
 // end quiz
 const endQuiz = () => {
-  // hide all questions
-  questions.forEach(question => {
-    question.style.display = 'none'
-    question.hidden = true
-  })
+  // hide quiz
+  quiz.hidden = true
   // show results
   resultsContainer.innerHTML = `
     <p>Score: ${score}/${questions.length}</p>

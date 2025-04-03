@@ -73,14 +73,29 @@
 
     <section id="quiz">
       <h2>Accessibility Quiz</h2>
+      <!-- progress bar -->
+      <div
+        class="quiz-progress"
+        role="status"
+        aria-live="polite"
+      >
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <p class="progress-text">0 of 4 questions answered</p>
+      </div>
       <!-- start quiz -->
       <button
         id="start-button"
         type="button"
         class="btn"
       >Start Quiz</button>
+
       <!-- quiz starts -->
-      <form>
+      <form
+        id="quiz-form"
+        hidden
+      >
         <fieldset class="question">
           <legend>1</legend>
           <h3>What does WCAG stand for?</h3>
