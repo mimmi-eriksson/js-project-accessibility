@@ -1,6 +1,5 @@
 // correct answers with messages
 const correctAnswers = ['c', 'b', 'b', 'a']
-
 const correctMessages = [
   'Well done! The Web Content Accessibility Guidelines (WCAG) are a series of recommendations for making web content accessible to people with disabilities.',
   'Correct! Level AA tackles the biggest and most common barriers for disabled users. This is often the target for many websites.',
@@ -9,11 +8,14 @@ const correctMessages = [
 ]
 
 // DOM selectors
-startQuizButton = document.getElementById('start-button')
-questions = document.querySelectorAll('.question')
-submitButtons = document.querySelectorAll('.submit-btn')
-messageContainer = document.getElementById('message-container')
-resultsContainer = document.getElementById('results-container')
+const quiz = document.getElementById('quiz-form')
+const startQuizButton = document.getElementById('start-button')
+const questions = document.querySelectorAll('.question')
+const submitButtons = document.querySelectorAll('.submit-btn')
+const messageContainer = document.getElementById('message-container')
+const resultsContainer = document.getElementById('results-container')
+const progressFill = document.querySelector('.progress-fill')
+const progressText = document.querySelector('.progress-text')
 
 // initialize variables
 let currentQuestionIndex = 0 // current question counter
@@ -25,10 +27,13 @@ const setActiveQuestion = (index) => {
   questions.forEach((question, i) => {
     if (i === index) {
       question.style.display = 'inline-flex'
+      question.hidden = false
       // set focus on first option
       question.querySelector('input[type="radio"]').focus()
+      question.scrollIntoView({ behaviour: 'smooth' })
     } else {
       question.style.display = 'none'
+      question.hidden = true
     }
 
   });
@@ -36,10 +41,15 @@ const setActiveQuestion = (index) => {
 
 // function to start Quiz
 const startQuiz = () => {
-  // show first question
+  // show quiz
+  quiz.hidden = false
+  // set first question
   setActiveQuestion(currentQuestionIndex)
+  // initialize progress bar
+  updateProgress()
   // hide start button
   startQuizButton.style.display = 'none'
+  startQuizButton.hidden = true
   //announce to the screen reader
   announcer.textcontent = 'Moved to first question'
 }
@@ -80,13 +90,13 @@ const checkAnswer = () => {
 // show error message if no option is selected
 const showError = (errorElement, message) => {
   errorElement.textContent = message
-  errorElement.style.display = 'block'
+  errorElement.hidden = false
 }
 
 // clear error message 
-const clearError = (ErrorElement) => {
-  ErrorElement.textContent = ''
-  ErrorElement.style.display = 'none'
+const clearError = (errorElement) => {
+  errorElement.textContent = ''
+  errorElement.hidden = true
 }
 
 // show feedback message
@@ -94,9 +104,21 @@ const displayFeedback = (message) => {
   // display message
   messageContainer.innerHTML = `
         <p>${message}</p>
-        <button class="continue-btn">Continue</button>
       `
   messageContainer.style.display = 'flex'
+  messageContainer.hidden = false
+  // continue button
+  // if last question - show results
+  if (currentQuestionIndex === (questions.length - 1)) {
+    messageContainer.innerHTML += `
+        <button class="continue-btn">Show results</button>
+      `
+  } else {
+    // else - next question
+    messageContainer.innerHTML += `
+        <button class="continue-btn">Next question</button>
+      `
+  }
   // set focus to continue button
   const continueButton = messageContainer.querySelector('.continue-btn')
   continueButton.focus()
@@ -105,32 +127,49 @@ const displayFeedback = (message) => {
     // clear feedback message
     messageContainer.innerHTML = ''
     messageContainer.style.display = 'none'
+    messageContainer.hidden = true
     // if last question - end quiz
     if (currentQuestionIndex === (questions.length - 1)) {
       endQuiz()
+      //announce to the screen reader
+      announcer.textContent = 'Moved to results section'
     } else {
       // else - go to next question
       const nextQuestionIndex = (currentQuestionIndex + 1)
       setActiveQuestion(nextQuestionIndex)
       currentQuestionIndex = nextQuestionIndex
+      // update progress
+      updateProgress()
       //announce to the screen reader
       announcer.textContent = 'Moved to next question'
     }
   })
 }
 
+// update progress function
+const updateProgress = () => {
+  const totalQuestions = (questions.length)
+  const answeredQuestions = currentQuestionIndex + 1
+  const percentage = (answeredQuestions / totalQuestions) * 100
+  // update progress bar
+  progressFill.style.width = `${percentage}%`
+  // update progress text
+  progressText.textContent = `Question ${answeredQuestions} of ${totalQuestions}`
+  // announce to screen reader
+  announcer.textContent = `Question ${answeredQuestions} of ${totalQuestions}`
+}
+
 // end quiz
 const endQuiz = () => {
-  // hide all questions
-  questions.forEach(question => {
-    question.style.display = 'none'
-  })
+  // hide quiz
+  quiz.hidden = true
   // show results
   resultsContainer.innerHTML = `
     <p>Score: ${score}/${questions.length}</p>
     <button class="continue-btn" type="button">Take quiz again</button>
   `
   resultsContainer.style.display = 'flex'
+  resultsContainer.hidden = false
   // set focus to button
   const continueButton = resultsContainer.querySelector('.continue-btn')
   continueButton.focus()
@@ -143,6 +182,13 @@ const endQuiz = () => {
     // clear container
     resultsContainer.innerHTML = ''
     resultsContainer.style.display = 'none'
+    // uncheck all radio options
+    questions.forEach((question) => {
+      const radios = question.querySelectorAll('input[type="radio"]')
+      radios.forEach((option) => {
+        option.checked = false
+      })
+    })
     // start quiz
     startQuiz()
   })
@@ -153,49 +199,51 @@ const endQuiz = () => {
 // start quiz when start button is selected
 startQuizButton.addEventListener('click', startQuiz)
 
-// go to next question when submit button is selected
+// check answer when submit button is selected
 submitButtons.forEach(button => {
-  button.addEventListener('click', () => checkAnswer())
+  button.addEventListener('click', (e) => {
+    e.preventDefault() // prevent page reload
+    checkAnswer()
+  })
 })
 
+// event listener to handle keyboard input for questions
+questions.forEach((question) => {
+  const radioGroup = question.querySelector('.answer-options')
+  const submitButton = question.querySelector('.submit-btn')
+  // add event listener on the radio group
+  radioGroup.addEventListener('keydown', (event) => {
+    const optionInFocus = radioGroup.querySelector(":focus")
+    // let the user select option by pressing a,b, or c
+    // enter or space to select the option in focus
+    switch (event.key) {
+      case 'a':
+      case 'A':
+        event.preventDefault()
+        question.querySelector('input[value="a"]').checked = true
+        submitButton.focus()
+        break
+      case 'b':
+      case 'B':
+        event.preventDefault()
+        question.querySelector('input[value="b"]').checked = true
+        submitButton.focus()
+        break
+      case 'c':
+      case 'C':
+        event.preventDefault()
+        question.querySelector('input[value="c"]').checked = true
+        submitButton.focus()
+        break
+      case 'Enter':
+      case ' ':
+        event.preventDefault()
+        optionInFocus.checked = true
+        submitButton.focus()
+        break
+    }
 
+  })
 
-
-
-
-// forget the code below for now........
-// // event listener to handle user input for each qestion
-// document.addEventListener('keydown', (event) => {
-//   const currentQuestion = questions[currentQuestionIndex]
-//   const submitButton = currentQuestion.querySelector('.submit-button')
-
-//   // let the user select option by pressing a,b, or c on keyboard
-//   switch (event.key) {
-//     case 'a':
-//       event.preventDefault()
-//       currentQuestion.querySelector('input[value="a"]').checked = true
-//       submitButton.focus()
-//       break
-//     case 'b':
-//       event.preventDefault()
-//       currentQuestion.querySelector('input[value="b"]').checked = true
-//       submitButton.focus()
-//       break
-//     case 'c':
-//       event.preventDefault()
-//       currentQuestion.querySelector('input[value="c"]').checked = true
-//       submitButton.focus()
-//       break
-//   }
-
-//   // if submit button is clicked / or keyboard press enter - go to next question
-//   submitButton.addEventListener('keydown', (event) => {
-//     if (event.key === 'Enter') {
-//       const nextQuestionIndex = (currentQuestionIndex + 1) % questions.length
-//       currentQuestionIndex =
-//       setActiveQuestion(nextQuestionIndex)
-//     }
-
-//   })
-// })
+})
 
