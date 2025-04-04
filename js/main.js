@@ -76,7 +76,7 @@ const checkAnswer = () => {
       displayFeedback(correctMessages[currentQuestionIndex])
     } else {
       // display feedback message
-      const wrongMessage = `That's not quite right.. The correct answer is ${correctOption.toUpperCase()}.`
+      const wrongMessage = `Nice try! But the correct answer is ${correctOption.toUpperCase()}.`
       displayFeedback(wrongMessage)
     }
   } else {
