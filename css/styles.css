@@ -53,7 +53,7 @@ p {
   transition: top 0.3s;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   top: 0;
   outline-offset: 2px;
 }
@@ -140,6 +140,7 @@ a:hover {
   padding: 10px;
   gap: 4rem;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .descriptive-img {
@@ -200,6 +201,7 @@ legend {
   border: 2px solid #bababa;
   border-radius: 15px;
   width: auto;
+  max-width: 500px;
   padding: 10px;
   margin: 5px;
 }
@@ -256,9 +258,9 @@ button.submit-btn:hover,
 }
 
 /* style buttons when in focus */
-button.submit-btn:focus,
-#start-button:focus,
-.continue-btn:focus {
+button.submit-btn:focus-visible,
+#start-button:focus-visible,
+.continue-btn:focus-visible {
   outline: 2px solid #235558;
   outline-offset: 5px;
 }
@@ -270,7 +272,7 @@ input[type="radio"]:checked+label {
 }
 
 /* style label when radio button is in focus */
-input[type="radio"]:focus+label {
+input[type="radio"]:focus-visible+label {
   outline: 2px solid #235558;
   outline-offset: 5px;
 }
@@ -280,7 +282,7 @@ input[type="radio"]:focus+label {
   align-self: flex-end;
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
@@ -353,12 +355,13 @@ footer p {
 
 .quiz-gif {
   max-width: 100%;
-  width: 300px;
+  width: 200px;
   height: auto;
   margin-top: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .results-container h2 {
   font-size: 28px;
   color: #235558;
@@ -398,7 +401,7 @@ footer p {
     body {
       font-size: 1.2rem;
     }
-    
+
   }
 
 
@@ -406,29 +409,5 @@ footer p {
     body {
       font-size: 1.4rem;
     }
-  }
-  }
-
-/* Base styles (default on mobile) */
-body {
-  font-size: 16px;
-}
-
-/* iPad Mini and above */
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 24px;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  h2 {
-    font-size: 38px;
-  }
-
-  p {
-    font-size: 22px;
   }
 }
