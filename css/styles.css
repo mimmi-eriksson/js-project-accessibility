@@ -138,7 +138,6 @@ a:hover {
   align-items: center;
   flex-wrap: wrap-reverse;
   padding: 10px;
-  gap: 4rem;
   margin-bottom: 4rem;
   text-align: center;
 }
@@ -396,19 +395,21 @@ footer p {
   body {
     font-size: 1rem;
   }
+}
 
-
-  @media (min-width: 768px) {
-    body {
-      font-size: 1.2rem;
-    }
-
+@media (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
   }
 
+}
 
-  @media (min-width: 1024px) {
-    body {
-      font-size: 1.4rem;
-    }
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.4rem;
+  }
+
+  .navigation-info {
+    gap: 4rem;
   }
 }
