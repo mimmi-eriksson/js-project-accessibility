@@ -122,7 +122,6 @@ const displayFeedback = (message) => {
   // set focus to continue button
   const continueButton = messageContainer.querySelector('.continue-btn')
   continueButton.focus()
-  resultsContainer.scrollIntoView({ behaviour: 'smooth' })
   // set event listener on the continue button based on the the message type
   continueButton.addEventListener('click', () => {
     // clear feedback message
@@ -167,16 +166,18 @@ const endQuiz = () => {
   // show results
   resultsContainer.innerHTML = `
     <h2>🎉 Congratulations! 🎉</h2>
-    <img src="./assets/celebration.gif" alt="celebration image" class="celebration-image">
-    <p>Thank you for taking the quiz! I hope you learned something about web accessibility.</p>
-    <p>Score: ${score}/${questions.length}</p>
+    <img src="./assets/celebration.gif" alt="celebration image" class="quiz-gif">
+    <p>Thank you for taking the quiz! We hope you learned something about web accessibility.</p>
+    <p>Your score: ${score} of ${questions.length}</p>
     <button class="continue-btn" type="button">Take quiz again</button>
   `
   resultsContainer.style.display = 'flex'
   resultsContainer.hidden = false
+  resultsContainer.scrollIntoView({ behaviour: 'smooth' })
   // set focus to button
   const continueButton = resultsContainer.querySelector('.continue-btn')
   continueButton.focus()
+  continueButton.scrollIntoView({ behaviour: 'smooth' })
   // set event listener to take the quiz again
   continueButton.addEventListener('click', () => {
     // reset current question index

@@ -200,6 +200,7 @@ legend {
   border: 2px solid #bababa;
   border-radius: 15px;
   width: auto;
+  max-width: 500px;
   padding: 10px;
   margin: 5px;
 }
@@ -353,7 +354,7 @@ footer p {
 
 .quiz-gif {
   max-width: 100%;
-  width: 300px;
+  width: 200px;
   height: auto;
   margin-top: 1rem;
   border-radius: 12px;
