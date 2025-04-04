@@ -170,7 +170,6 @@ const endQuiz = () => {
     <img src="./assets/celebration.gif" alt="celebration image" class="celebration-image">
     <p>Thank you for taking the quiz! I hope you learned something about web accessibility.</p>
     <p>Score: ${score}/${questions.length}</p>
-
     <button class="continue-btn" type="button">Take quiz again</button>
   `
   resultsContainer.style.display = 'flex'
@@ -215,7 +214,6 @@ submitButtons.forEach(button => {
 // event listener to handle keyboard input for questions
 questions.forEach((question) => {
   const radioGroup = question.querySelector('.answer-options')
-  const submitButton = question.querySelector('.submit-btn')
   // add event listener on the radio group
   radioGroup.addEventListener('keydown', (event) => {
     const optionInFocus = radioGroup.querySelector(":focus")
@@ -226,25 +224,23 @@ questions.forEach((question) => {
       case 'A':
         event.preventDefault()
         question.querySelector('input[value="a"]').checked = true
-        submitButton.focus()
+        question.querySelector('input[value="a"]').focus()
         break
       case 'b':
       case 'B':
         event.preventDefault()
         question.querySelector('input[value="b"]').checked = true
-        submitButton.focus()
+        question.querySelector('input[value="b"]').focus()
         break
       case 'c':
       case 'C':
         event.preventDefault()
         question.querySelector('input[value="c"]').checked = true
-        submitButton.focus()
+        question.querySelector('input[value="c"]').focus()
         break
       case 'Enter':
-      case ' ':
         event.preventDefault()
         optionInFocus.checked = true
-        submitButton.focus()
         break
     }
 
